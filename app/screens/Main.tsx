@@ -36,11 +36,20 @@ const Main = () => {
           }}
       />
 
-      <View>
-        <Text>This is the Home Screen!</Text>
-        {/* Add other components/content as needed */}
+      <View style={styles.card}>
+        <View style={styles.cardContent}>
+            <View style={styles.cardHeader}>
+                <View style={styles.headerText}>
+                    <Text style={styles.reminderTitle}>5 Hours </Text>
+                    <View style={styles.cardBody}>
+                    <Text style={{fontSize: 20, marginBottom: 10}}>to your next medication !</Text>
+                    </View>
+                </View>
+            </View>
+
+        </View>
       </View>
-    </View>
+  </View>
   );
 };
 
@@ -62,10 +71,61 @@ const styles = StyleSheet.create({
         height: 360,
         marginLeft: 30,
         marginRight: 30,
-        marginBottom : 100,
+        marginBottom : 30,
         borderRadius: 10,
 
       },
+      // CARD LAYOUT
+
+    card: {
+      backgroundColor: '#FFC700',
+      borderRadius: 20,
+      padding: 15,
+      marginTop: 10,
+      marginBottom: 10,
+      marginLeft: 30,
+      marginRight: 30,
+  },
+
+  cardHeader: {
+      flexDirection: 'row',
+      alignItems: 'center',
+  },
+
+  cardBody: {
+      marginLeft: 10,
+      marginTop: 10,
+  },
+
+  // Lable style
+  reminderTitle: {
+      fontSize: 50,
+      fontWeight: 'bold',
+      color: "#192038",
+      marginLeft: 10,
+      marginTop: 10,
+  },
+  medicationName: {
+      fontSize: 16,
+      marginTop: 10,
+      color: "#0998E8",
+      marginLeft: 10,
+  },
+  pillsLeftLabel: {
+      fontSize: 14,
+      fontWeight: "bold",
+      marginTop: 5,
+      color: "#192038",
+      textAlign: "right"
+  },
+  headerText: {
+      flex: 1,
+  },
+  cardContent: {
+      flexDirection: 'row',
+      alignItems: 'center',
+  },
+
   });
 
 

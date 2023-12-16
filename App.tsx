@@ -4,9 +4,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import {  Image} from 'react-native';
 import List from './app/screens/List';
-import Main from './app/screens/Main';
+import main from './app/screens/Main';
 import scan from './app/screens/ImageUpload';
 import schedule from './app/screens/addSchedule';
+import pill from './app/screens/Pill_Info';
+
 import React from 'react';
 
 const Stack = createNativeStackNavigator();
@@ -23,7 +25,7 @@ export default function App() {
     <Tab.Navigator>
       <Tab.Screen
         name="Home"
-        component={Main}
+        component={main}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (

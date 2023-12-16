@@ -78,7 +78,7 @@ const List = ({ navigation }: any) => {
         return (
             //CARD LAYOUT
 
-            <View style={styles.card}>
+        <View style={styles.card}>
             <View style={styles.cardContent}>
                 <View style={styles.cardHeader}>
                     {/* <Image source={require('./tom.jpg')} style={styles.pillImage} /> */}

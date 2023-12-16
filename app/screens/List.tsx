@@ -58,7 +58,7 @@ const List = ({ navigation }: any) => {
             <View style = {styles.todoContainer}>
                 <TouchableOpacity onPress = {toggleDone} style={styles.todo}>
                     {item.done && <Ionicons name="md-checkmark-circle" size={24} color="green"/>}
-                    {!item.done && <Entypo name="circle" size={24} color="balck" />}
+                    {!item.done && <Entypo name="circle" size={24} color="black" />}
                     <Text style={styles.todoText}>{item.title}</Text>
                 </TouchableOpacity>
                 <Ionicons name="trash-bin-outline" size={24} color="red" onPress={deleteItem} />

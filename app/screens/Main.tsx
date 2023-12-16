@@ -42,7 +42,7 @@ const Main = () => {
                 <View style={styles.headerText}>
                     <Text style={styles.reminderTitle}>5 Hours </Text>
                     <View style={styles.cardBody}>
-                    <Text style={{fontSize: 20, marginBottom: 10}}>to your next medication !</Text>
+                    <Text style={{fontSize: 20, marginBottom: 10, color:"#192038"}}>to your next medication !</Text>
                     </View>
                 </View>
             </View>
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
       color: "#192038",
       marginLeft: 10,
       marginTop: 10,
+      colour:"#192038",
   },
   medicationName: {
       fontSize: 16,

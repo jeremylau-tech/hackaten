@@ -2,7 +2,7 @@
 import { addDoc, collection, deleteDoc, doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Button, View, ScrollView,SafeAreaView, Text, TextInput, StyleSheet, FlatList, TouchableOpacity,  ImageSourcePropType} from "react-native";
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import schedule from './addSchedule';
 
@@ -11,7 +11,6 @@ import  Ionicons from "@expo/vector-icons/Ionicons";
 import { Entypo } from "@expo/vector-icons";
 import React from "react";
 
-const Stack = createStackNavigator();
 
 export interface Medication {
 
@@ -78,15 +77,7 @@ const List = ({ navigation }: any) => {
 
         return (
             //CARD LAYOUT
-            // <View style = {styles.todoContainer}>
-            //     <TouchableOpacity onPress = {toggleDone} style={styles.todo}>
-            //         {item.done && <Ionicons name="md-checkmark-circle" size={24} color="green"/>}
-            //         {!item.done && <Entypo name="circle" size={24} color="black" />}
-            //         <Text style={styles.todoText}>{item.medicationName}</Text>
-            //         <Text style={styles.todoText}>{item.dosage}</Text>
-            //     </TouchableOpacity>
-            //     <Ionicons name="trash-bin-outline" size={24} color="red" onPress={deleteItem} />
-            // </View>
+
             <View style={styles.card}>
             <View style={styles.cardContent}>
                 <View style={styles.cardHeader}>

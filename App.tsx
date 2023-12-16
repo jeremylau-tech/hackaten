@@ -14,14 +14,8 @@ import React from 'react';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+function Root() {
   return (
-
-    // <NavigationContainer>
-
-    // </NavigationContainer>
-
-    <NavigationContainer>
     <Tab.Navigator>
       <Tab.Screen
         name="Home"
@@ -63,11 +57,17 @@ export default function App() {
         }}
       />
     </Tab.Navigator>
-    {/* <Stack.Navigator initialRouteName="Main">
-        <Stack.Screen name="Home" component={Main} />
-        <Stack.Screen name="List" component={List} />
+  );
+}
+
+
+export default function App() {
+  return (
+  <NavigationContainer>
+    <Stack.Navigator>
+        <Stack.Screen name="Root" component={Root} options={{ headerShown: false }}/>
         <Stack.Screen name="addSchedule" component={schedule} />
-      </Stack.Navigator> */}
+      </Stack.Navigator>
   </NavigationContainer>
   );
 };

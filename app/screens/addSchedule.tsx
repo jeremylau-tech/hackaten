@@ -47,7 +47,7 @@ const addSchedule = ({ route, navigation }: AddScheduleProps) => {
             setNote("");
             setPillsLeft(0);
             console.log('Medication added with ID:', doc.id);
-            // navigation.navigate(List)
+            navigation.navigate('List');
         }catch (error){
             console.error('Error adding medication:', (error as any).message);
         }

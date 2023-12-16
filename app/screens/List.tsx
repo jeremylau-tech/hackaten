@@ -11,6 +11,7 @@ import  Ionicons from "@expo/vector-icons/Ionicons";
 import { Entypo } from "@expo/vector-icons";
 import React from "react";
 
+const Stack = createStackNavigator();
 
 export interface Medication {
 

@@ -10,14 +10,19 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name= "Schedule" component={List} />
-        {/* <Stack.Screen name= "Schedule2" component={Details} /> */}
-        {/* <Stack.Screen name= "Add Schedule" component={Schedule} /> */}
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen name= "Schedule" component={List} />
+    //     <Stack.Screen name= "Add Schedule" component={Schedule} />
         
-      </Stack.Navigator>
+    //   </Stack.Navigator>
 
+    // </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="List">
+        <Stack.Screen name="List" component={List} />
+        <Stack.Screen name="addSchedule" component={Schedule} />
+      </Stack.Navigator>
     </NavigationContainer>
 
   );

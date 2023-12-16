@@ -61,7 +61,7 @@ const Details = () => {
                 timeToEat="08:00 AM"
                 mealStatus="Before Meal"
                 pillsLeft={3}
-                pillImage={require('./tom.jpg')}
+                pillImage={require('')}
             />
 
             <MedicationCard

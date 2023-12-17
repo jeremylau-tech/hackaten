@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import { Calendar,LocaleConfig } from 'react-native-calendars';
+import { Calendar,} from 'react-native-calendars';
 
 const Main = () => {
 
@@ -16,7 +16,9 @@ const Main = () => {
       {/* Calendar */}
       <Calendar
          markedDates={{
-            '2023-12-17': {selected: true, marked: true, selectedColor: '#192038'}
+            '2023-12-17': {selected: true, marked: true, selectedColor: '#192038'},
+            '2023-12-14': {selected: true, marked: true, selectedColor: '#CC5D5D'},
+            '2023-12-04': {selected: true, marked: true, selectedColor: '#CC5D5D'}
           }}
         style={styles.calendar}
         theme={{

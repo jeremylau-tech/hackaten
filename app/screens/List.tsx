@@ -1,4 +1,5 @@
 
+import * as React from 'react';
 import { addDoc, collection, deleteDoc, doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Button, View, ScrollView,SafeAreaView, Text, TextInput, StyleSheet, FlatList, TouchableOpacity,  ImageSourcePropType} from "react-native";
@@ -9,8 +10,6 @@ import schedule from './addSchedule';
 import { FIREBASE_DB } from "../../firebaseConfig";
 import  Ionicons from "@expo/vector-icons/Ionicons";
 import { Entypo } from "@expo/vector-icons";
-import React from "react";
-
 
 export interface Medication {
 

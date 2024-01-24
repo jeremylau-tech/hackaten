@@ -9,7 +9,7 @@ import scan from './app/screens/ImageUpload';
 import schedule from './app/screens/addSchedule';
 import pill from './app/screens/Pill_Info';
 
-import React from 'react';
+import * as React from 'react';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

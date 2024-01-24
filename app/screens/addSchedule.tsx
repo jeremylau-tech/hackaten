@@ -1,5 +1,6 @@
+import * as React from 'react';
 import { addDoc, collection } from 'firebase/firestore';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, ImageSourcePropType, ScrollView} from 'react-native';
 import { FIREBASE_DB } from '../../firebaseConfig';
 

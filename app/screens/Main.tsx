@@ -1,17 +1,75 @@
-import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import * as React from 'react';
+import  { useState, useEffect } from 'react';
+import { View, Text, TextInput, Image, StyleSheet } from 'react-native';
 import { Calendar,LocaleConfig } from 'react-native-calendars';
+import generateText from './generateText'
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Main = () => {
 
+  const [generatedText, setGeneratedText] = useState('');
+  const [input1, setInput1] = useState('');
+  const [input2, setInput2] = useState('');
+
+  useEffect(() => {
+    // Call the generateText function and update the state with the generated text
+    generateText().then((text) => setGeneratedText(text));
+    // console.log(generateText);
+  }, []); // Empty dependency array ensures the effect runs once when the component mounts
+
+  interface ChatProps {
+    updateGeneratedText: (text: string) => void;
+  }
+  
+  const ChatScreen = ({ updateGeneratedText }: ChatProps) => (
+    <View style={styles.container}>
+      <Text>{/* Display generated text here */}</Text>
+    </View>
+  );
+
+  useEffect(() => {
+    // Call the generateText function with the combined input text
+    generateText(`${input1} ${input2}`).then((text) => setGeneratedText(text));
+  }, [input1, input2]);
 
   return (
     <View style={styles.container}>
+    
+            <View style={styles.card}>
+         
+            <TextInput
+              style={styles.textInput}
+              placeholder="Relationship between the patient and you"
+              value={input1}
+              onChangeText={(text) => setInput1(text)}
+            />
+            <TextInput
+              style={styles.textInput}
+              placeholder="Language"
+              value={input2}
+              onChangeText={(text) => setInput2(text)}
+            />
+            {/* <TextInput
+              style={styles.textInput}
+              placeholder="Language"
+              value={input2}
+              onChangeText={(text) => setInput3(text)}
+            /> */}
+             <View style={styles.cardContent}>
+          <View style={styles.cardHeader}>
+            <View style={styles.headerText}>
+              <Text style={styles.reminderTitle}>{generatedText}</Text>
+              {/* ... Your existing code ... */}
+            </View>
+          </View>
+        </View>
+       
+      </View>
       {/* Banner Image */}
-      <Image
+      {/* <Image
         source={require('./banner.png')} // Replace with the actual path to your image
         style={styles.bannerImage}
-      />
+      /> */}
 
       {/* Calendar */}
       <Calendar
@@ -43,6 +101,7 @@ const Main = () => {
                     <Text style={styles.reminderTitle}>5 Hours </Text>
                     <View style={styles.cardBody}>
                     <Text style={{fontSize: 20, marginBottom: 10, color:"#192038"}}>to your next medication !</Text>
+                    <Text>{generatedText}</Text>
                     </View>
                 </View>
             </View>
@@ -67,6 +126,14 @@ const styles = StyleSheet.create({
       borderRadius: 20,
 
     },
+    textInput: {
+      height: 40,
+      borderColor: 'gray',
+      borderWidth: 1,
+      marginBottom: 10,
+      paddingLeft: 10,
+    },
+    
     calendar: {
         height: 360,
         marginLeft: 30,

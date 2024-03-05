@@ -11,6 +11,8 @@ const Main = () => {
   const [input1, setInput1] = useState('');
   const [input2, setInput2] = useState('');
 
+
+  // NEED TO ADD IN SUBMIT ONLY IT WILL SETUP 
   useEffect(() => {
     // Call the generateText function and update the state with the generated text
     generateText().then((text) => setGeneratedText(text));
@@ -49,15 +51,10 @@ const Main = () => {
               value={input2}
               onChangeText={(text) => setInput2(text)}
             />
-            {/* <TextInput
-              style={styles.textInput}
-              placeholder="Language"
-              value={input2}
-              onChangeText={(text) => setInput3(text)}
-            /> */}
+
              <View style={styles.cardContent}>
-          <View style={styles.cardHeader}>
-            <View style={styles.headerText}>
+              <View style={styles.cardHeader}>
+                <View style={styles.headerText}>
               <Text style={styles.reminderTitle}>{generatedText}</Text>
               {/* ... Your existing code ... */}
             </View>
